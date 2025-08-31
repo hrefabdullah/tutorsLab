@@ -5,7 +5,7 @@ import lightIllustration from "../assets/teacherIllustration.jpg";
 
 export default function Hero() {
   return (
-    <section className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-4 py-6 md:grid-cols-2 md:py-16">
+    <section className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-4 py-6 pt-8 md:grid-cols-2 md:py-16">
       {/* Left: copy */}
       <div className="flex flex-col justify-center">
         <h1 className="text-[50px] w-[70%] font-bold tracking-tight leading-[1] sm:text-[55px] ">
