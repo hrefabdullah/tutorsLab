@@ -5,13 +5,13 @@ import lightIllustration from "../assets/teacherIllustration.jpg";
 
 export default function Hero() {
   return (
-    <section className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
+    <section className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-4 py-6 md:grid-cols-2 md:py-16">
       {/* Left: copy */}
       <div className="flex flex-col justify-center">
-        <h1 className="text-5xl w-[97%] font-bold tracking-tight sm:text-5xl">
+        <h1 className="text-[50px] w-[70%] font-bold tracking-tight leading-[1] sm:text-[55px] ">
           Find the <span className="text-yellow-500">right tutor</span> for yourself
         </h1>
-        <p className="mt-4 text-sm text-gray-600">
+        <p className="mt-4 text-sm md:text-md text-gray-600">
           TutorsLab connects passionate educators with students looking for
           personalized learning.
         </p>

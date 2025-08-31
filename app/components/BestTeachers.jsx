@@ -34,7 +34,7 @@ const teachers = [
 
 export default function BestTeachers() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-10">
+    <section className="mx-auto max-w-7xl px-4 py-10">
       <div className="mb-6 flex items-end justify-between">
         <div>
           <h2 className="text-2xl font-bold">Best Teachers</h2>
