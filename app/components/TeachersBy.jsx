@@ -34,7 +34,7 @@ const teachers = [
 
 export default function TeachersBy({ cat }) {
   return (
-    <section className="mx-auto max-w-[1400px] px-20 py-10 bg-slate-800 mb-10 rounded-2xl">
+    <section className="mx-auto max-w-[1400px] px-5 lg:px-20 py-10 bg-slate-800 mb-10 rounded-2xl">
       <div className="mb-6 flex items-end justify-between">
         <div>
           <h2 className="text-2xl font-bold text-white">Best Teachers for class {cat} students</h2>

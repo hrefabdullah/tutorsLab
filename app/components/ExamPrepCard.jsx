@@ -1,6 +1,6 @@
 export default function ExamPrepCard() {
   return (
-    <div className="max-w-xl mx-auto rounded-2xl bg-slate-800 p-8 text-center shadow-md mb-10">
+    <div className="max-w-7xl mx-auto rounded-2xl bg-slate-800 p-8 text-center shadow-md mb-10">
       <h2 className="text-2xl font-bold text-white mb-3">
         Are you preparing for NEET, JEE, or other exams?
       </h2>

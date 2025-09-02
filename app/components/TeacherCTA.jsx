@@ -17,7 +17,7 @@ export default function TeacherCTA() {
         <div className="mt-6 lg:mt-0">
           <a
             href="#"
-            className="inline-flex items-center justify-center rounded-md bg-slate-800 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-yellow-400 transition"
+            className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-gray-800 shadow hover:bg-gray-100 transition"
           >
             Join Now
           </a>
