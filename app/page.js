@@ -3,7 +3,10 @@ import HomePage from './components/HomePage'
 
 const home = () => {
     return (
-    <HomePage />
-)}
+        <div className='scroll-smooth'>
+            <HomePage />
+        </div>
+    )
+}
 
 export default home

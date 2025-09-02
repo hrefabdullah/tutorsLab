@@ -6,17 +6,21 @@ import QuoteStrip from "./QuoteStrip";
 import CategoriesBento from "./CategoryBento";
 import Footer from "./Footer";
 import TeacherCTA from "./TeacherCTA";
+import TeachersBy from "./TeachersBy";
+import ExamPrepCard from "./ExamPrepCard";
+import UnderDevelopmentCard from "./UnderDevelopmentCard";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900">
       <QuoteStrip />
-      <Navbar />
       <Hero />
+      <UnderDevelopmentCard />
       <BestTeachers />
       <CategoriesBento />
-      <TeacherCTA />
-      <Footer />
+      <TeachersBy cat={'IX & X'} />
+      <TeachersBy cat={'XI & XII'} /><TeacherCTA />
+      <ExamPrepCard />
     </main>
   );
 }

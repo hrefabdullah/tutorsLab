@@ -11,14 +11,14 @@ export default function CategoriesBento() {
     ];
 
     return (
-        <section className="mx-auto max-w-6xl px-4 py-10">
+        <section className="mx-auto max-w-[1400px] px-4 py-10 min-h-[110vh]">
             <div className="mb-6">
                 <h2 className="text-2xl font-bold">Explore by Category</h2>
                 <p className="text-sm text-gray-500">Find tutors based on what matters to you</p>
             </div>
 
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 auto-rows-[150px] gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 auto-rows-[150px] md:auto-rows-[170px] gap-4">
                 {categories.map((cat, i) => (
                     <div
                         key={i}
