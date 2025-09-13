@@ -8,7 +8,7 @@ export default function TeacherCTA() {
           <h2 className="text-2xl font-bold text-white">
             Are you a teacher?
           </h2>
-          <p className="mt-2 text-gray-300 text-sm">
+          <p className="mt-2 text-gray-100 text-sm">
             Join TutorsLab today and connect with thousands of students seeking personalized learning.
           </p>
         </div>

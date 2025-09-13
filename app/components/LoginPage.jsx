@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebookF, FaApple } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 /**
  * LoginPage component
@@ -11,13 +11,42 @@ import { FaFacebookF, FaApple } from "react-icons/fa";
  * Drop this component into any page and it will render a centered card.
  */
 export default function LoginPage({ mode = "login" }) {
+
+  const router = useRouter();
+
+  const [email, setEmail] = useState("")
+  const [pass, setPass] = useState("")
+  const [name, setName] = useState("")
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const register = await fetch("/api/users", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password: pass }),
+      })
+
+      const res = await register.json()
+      console.log(res)
+
+      router.push("/")
+
+    } catch (error) {
+      console.log(error)
+    }
+
+
+  }
+
+
   const isRegister = mode === "register";
   return (
     <div className="min-h-screen w-full bg-gray-100 flex items-center justify-center p-4">
       <div className="relative w-full max-w-md rounded-2xl bg-white shadow-lg p-6 sm:p-8">
-        {/* Decorative circles */}
-        {/* <div className="pointer-events-none absolute -top-8 -right-8 h-36 w-36 rounded-full bg-yellow-200/70" />
-        <div className="pointer-events-none absolute -top-2 -right-2 h-16 w-16 rounded-full bg-yellow-400" /> */}
 
         {/* Header */}
         <div className="flex items-start justify-between">
@@ -29,15 +58,16 @@ export default function LoginPage({ mode = "login" }) {
 
         {/* Brand */}
         <h1 className="mt-4 text-4xl font-bold tracking-tight">
-          <span className="text-gray-900">tutors</span>
+          <span className="text-gray-900">Tutors</span>
           <span className="text-yellow-500">Lab</span>
         </h1>
 
         {/* Form */}
-        <form className="mt-6 space-y-3">
+        <form onSubmit={handleSubmit} className="mt-6 space-y-3">
           <div>
             <input
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email id"
               className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 outline-none transition focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200"
             />
@@ -46,6 +76,7 @@ export default function LoginPage({ mode = "login" }) {
             <div>
               <input
                 type="text"
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Your full name"
                 className="mt-1 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 outline-none transition focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200"
               />
@@ -55,6 +86,7 @@ export default function LoginPage({ mode = "login" }) {
             <input
               id="password"
               type="password"
+              onChange={(e) => setPass(e.target.value)}
               placeholder="Enter password"
               className="mt-1 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 outline-none transition focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200"
             />
@@ -83,27 +115,13 @@ export default function LoginPage({ mode = "login" }) {
         </div>
 
         {/* Social buttons */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3=1 gap-3">
           <button
             type="button"
             className="flex items-center justify-center rounded-md border border-gray-200 bg-white py-2 text-sm text-gray-700 transition hover:bg-gray-50"
             aria-label="Continue with Google"
-          >
-            <FcGoogle className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            className="flex items-center justify-center rounded-md border border-gray-200 bg-white py-2 text-sm text-gray-700 transition hover:bg-gray-50"
-            aria-label="Continue with Facebook"
-          >
-            <FaFacebookF className="h-5 w-5 text-[#1877F2]" />
-          </button>
-          <button
-            type="button"
-            className="flex items-center justify-center rounded-md border border-gray-200 bg-white py-2 text-sm text-gray-700 transition hover:bg-gray-50"
-            aria-label="Continue with Apple"
-          >
-            <FaApple className="h-5 w-5 text-black" />
+          >Continue with Google 
+            <FcGoogle className="ml-2 h-5 w-5" />
           </button>
         </div>
 
