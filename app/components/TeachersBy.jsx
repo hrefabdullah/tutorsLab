@@ -34,10 +34,10 @@ const teachers = [
 
 export default function TeachersBy({ cat }) {
   return (
-    <section className="mx-auto max-w-[1400px] px-5 lg:px-20 py-10 bg-slate-800 mb-10">
+    <section className="mx-auto max-w-[1400px] px-5 lg:px-15 py-10 bg-slate-800 mb-10 rounded-xl">
       <div className="mb-6 flex items-end justify-between">
         <div>
-          <h2 className="text-lg lg:text-2xl font-bold text-white">Best Teachers for class {cat} students</h2>
+          <h2 className="text-xl lg:text-2xl font-bold text-white">Class {cat}</h2>
           <p className="text-xs text-gray-500">Best in class teaching for {cat} grade students</p>
         </div>
         <button className="rounded-md border border-gray-200 bg-white px-4 py-2 md:text-sm text-xs font-medium text-gray-700 transition hover:bg-gray-50">
